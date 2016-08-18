@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM quay.io/aptible/ubuntu:14.04
 
 ENV VERSION 7.6.0-alpha2
 ENV DISTRO tomcat
@@ -34,4 +34,3 @@ RUN /usr/local/bin/download-database-drivers.sh "${NEXUS}?r=public&g=org.camunda
 
 EXPOSE 8080
 
-CMD ["/usr/local/bin/configure-and-run.sh"]
