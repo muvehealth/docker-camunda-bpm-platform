@@ -1,0 +1,10 @@
+#!/bin/sh
+# start-sumologic: Write /etc/sumo.conf from ENV variables and start collector
+
+set -e
+
+sed -i "s/<SUMOLOGIC_ACCESSID>/$SUMOLOGIC_ACCESSID/" /etc/sumo.conf
+sed -i "s/<SUMOLOGIC_ACCESSKEY>/$SUMOLOGIC_ACCESSKEY/" /etc/sumo.conf
+sed -i "s/<SUMOLOGIC_NAME>/$SUMOLOGIC_NAME/" /etc/sumo.conf
+
+service collector start

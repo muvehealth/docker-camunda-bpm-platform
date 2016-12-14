@@ -1,0 +1,11 @@
+{
+  "api.version": "v1",
+  "sources": [
+    {
+      "name": "Aptible App Logs",
+      "sourceType": "LocalFile",
+      "multilineProcessingEnabled": false,
+      "pathExpression": "/var/log/sumologic.log"
+    }
+  ]
+}
