@@ -11,7 +11,7 @@ RUN wget https://collectors.sumologic.com/rest/download/deb/64 -O sumo.deb && \
 
 ADD files/etc/* /etc/
 ADD files/bin/* /usr/local/bin/
-RUN ["chmod", "+x", "/usr/local/bin/start-collector”]
+RUN ["chmod", "+x", "/usr/local/bin/start-collector"]
 # end sumologic setup
 
 ENV VERSION 7.6.0-alpha2
