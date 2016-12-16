@@ -1,5 +1,14 @@
 FROM quay.io/aptible/ubuntu:14.04
 
+# begin sumologic setup
+WORKDIR /tmp
+RUN wget https://collectors.sumologic.com/rest/download/deb/64 -O sumo.deb && \
+    dpkg -i sumo.deb && rm sumo.deb
+
+ADD files/etc/* /etc
+ADD files/bin/* /usr/local/bin
+# end sumologic setup
+
 ENV VERSION 7.6.0-alpha2
 ENV DISTRO tomcat
 ENV SERVER apache-tomcat-8.0.24
