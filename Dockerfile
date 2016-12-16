@@ -9,8 +9,8 @@ WORKDIR /tmp
 RUN wget https://collectors.sumologic.com/rest/download/deb/64 -O sumo.deb && \
     dpkg -i sumo.deb && rm sumo.deb
 
-ADD files/etc/* /etc
-ADD files/bin/* /usr/local/bin
+ADD files/etc/* /etc/
+ADD files/bin/* /usr/local/bin/
 # end sumologic setup
 
 ENV VERSION 7.6.0-alpha2
