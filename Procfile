@@ -1,2 +1,2 @@
 # Procfile
-web: start-collector && /usr/local/bin/configure-and-run.sh > /var/log/sumologic.log 2>&1
+web: /usr/local/bin/start-collector && /usr/local/bin/configure-and-run.sh > /var/log/sumologic.log 2>&1
