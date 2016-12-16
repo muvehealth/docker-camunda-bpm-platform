@@ -1,5 +1,9 @@
 FROM quay.io/aptible/ubuntu:14.04
 
+RUN  apt-get update \
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/*
+
 # begin sumologic setup
 WORKDIR /tmp
 RUN wget https://collectors.sumologic.com/rest/download/deb/64 -O sumo.deb && \
