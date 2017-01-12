@@ -1,7 +1,7 @@
 # image settings for the docker image name, tags and
 # container name while running
 IMAGE_NAME=camunda/camunda-bpm-platform
-TAGS=latest tomcat-latest tomcat-7.6.0-alpha2 7.6.0-alpha2
+TAGS=latest tomcat-latest tomcat-7.6.0 7.6.0
 NAME=camunda
 
 # parent image name
@@ -25,7 +25,7 @@ NO_CACHE=false
 build:
 	$(DOCKER) build --rm=$(REMOVE) --force-rm=$(FORCE_RM) --no-cache=$(NO_CACHE) -t $(IMAGE) .
 	@for tag in $(ADDITIONAL_TAGS); do \
-		$(DOCKER) tag -f $(IMAGE) $(IMAGE_NAME):$$tag; \
+		$(DOCKER) tag $(IMAGE) $(IMAGE_NAME):$$tag; \
 	done
 
 # pull image from registry
